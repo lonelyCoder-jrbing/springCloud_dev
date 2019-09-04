@@ -34,7 +34,7 @@ public class LoggerClientFilter {
         try {
             result = pjp.proceed();
             log.info("RequestTarget : " + appName + "." + name + "." + method);
-            log.info("RequestParam : " + JSON.toJSON(pjp.getArgs()));
+//            log.info("RequestParam : " + JSON.toJSON(pjp.getArgs()));
             if (result instanceof ResponseEntity) {
                 status = ((ResponseEntity) result).getStatusCode();
             } else {
@@ -45,7 +45,7 @@ public class LoggerClientFilter {
             result = new ResponseEntity<>("{\"Internal Server Error\" : \"" + throwable.getMessage() + "\"}", status);
             throwable.printStackTrace();
         } finally {
-            log.info("ResponseEntity : {" + "\"HttpStatus\":\"" + status.toString() + "\"" + ",\"ResponseBody\": " + JSON.toJSON(result) + "}");
+//            log.info("ResponseEntity : {" + "\"HttpStatus\":\"" + status.toString() + "\"" + ",\"ResponseBody\": " + JSON.toJSON(result) + "}");
             log.info("Internal Method Cost Time: {}ms", System.currentTimeMillis() - startTime);
         }
         return result;

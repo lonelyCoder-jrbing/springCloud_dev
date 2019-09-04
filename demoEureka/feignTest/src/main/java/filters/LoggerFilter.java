@@ -1,7 +1,5 @@
-package filters;/*
-package com.yh.csx.factory.app.filters;
-
-import com.alibaba.fastjson.JSON;
+package filters;
+//import com.alibaba.fastjson.JSON;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -21,7 +19,7 @@ public class LoggerFilter {
     @Resource
     private Environment environment;
 
-    @Around(value = "execution (* com.yh.csx.factory.app.controller.*.*(..))")
+    @Around(value = "execution (* servicefeign.feign.*.*(..))")
     public Object processApiFacade(ProceedingJoinPoint pjp) {
         String appName;
         try {
@@ -38,7 +36,7 @@ public class LoggerFilter {
             result = pjp.proceed();
             log.info("RequestTarget : " + appName + "." + name + "." + method);
             if(!method.toLowerCase().contains("import")){
-                log.info("RequestParam : " + JSON.toJSON(pjp.getArgs()));
+//                log.info("RequestParam : " + JSON.toJSON(pjp.getArgs()));
             }
             if (result instanceof ResponseEntity) {
                 status = ((ResponseEntity) result).getStatusCode();
@@ -50,10 +48,10 @@ public class LoggerFilter {
             result = new ResponseEntity<>("{\"Internal Server Error\" : \"" + throwable.getMessage() + "\"}", status);
             throwable.printStackTrace();
         } finally {
-            log.info("ResponseEntity : {" + "\"HttpStatus\":\"" + status.toString() + "\"" + ",\"ResponseBody\": " + JSON.toJSON(result) + "}");
+//            log.info("ResponseEntity : {" + "\"HttpStatus\":\"" + status.toString() + "\"" + ",\"ResponseBody\": " + JSON.toJSON(result) + "}");
             log.info("Internal Method Cost Time: {}ms", System.currentTimeMillis() - startTime);
         }
         return result;
     }
 }
-*/
+
