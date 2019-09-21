@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 
 public class DealNumber implements Consumer<Integer> {
 
-  private  MyConsumerTest test;
+  private MyConsumerTest test;
 
   public DealNumber(MyConsumerTest test) {
     this.test = test;

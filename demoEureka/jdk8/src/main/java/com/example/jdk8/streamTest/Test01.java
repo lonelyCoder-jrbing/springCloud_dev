@@ -45,21 +45,17 @@ public class Test01 {
 */
     Map<Integer, Student> collect = students.stream()
         .collect(Collectors.toMap(Student::getNumber, s -> s, (key1, key2) -> key1));
-    System.out.println("collect:  "+collect);
+    System.out.println("collect:  " + collect);
     //重载方法
     Map<Integer, Student> collect1 = students.stream()
-        .collect(Collectors.toMap(Student::getNumber, s -> s, (key1, key2) -> key1, LinkedHashMap::new));
-    System.out.println("collect:  "+collect1);
+        .collect(
+            Collectors.toMap(Student::getNumber, s -> s, (key1, key2) -> key1, LinkedHashMap::new));
+    System.out.println("collect:  " + collect1);
     //还有一种分组的方法
     Map<Integer, List<Student>> collect2 = students.stream()
         .collect(Collectors.groupingBy(Student::getNumber));
-    System.out.println("collect2:  "+collect2);
+    System.out.println("collect2:  " + collect2);
   }
-
-
-
-
-
 
 
 }

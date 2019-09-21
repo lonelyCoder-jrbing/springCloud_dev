@@ -1,8 +1,7 @@
 package com.example.jdk8.functionTest;
 
-public enum Name
-{
-  JRBING("rongbingju"),BYY("hakuosang");
+public enum Name {
+  JRBING("rongbingju"), BYY("hakuosang");
   private String enName;
 //  private String CHName;
 

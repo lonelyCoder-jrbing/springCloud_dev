@@ -11,6 +11,7 @@
     <modules>
         <module>consumer</module>
         <module>dao</module>
+      <module>kafkademo</module>
     </modules>
 
 

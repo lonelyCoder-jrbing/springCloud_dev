@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class Teacher {
-private Optional<String> name;
-private Optional<Integer> age;
+
+  private Optional<String> name;
+  private Optional<Integer> age;
 }

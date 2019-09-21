@@ -17,13 +17,15 @@ public class ListUtils {
   }
 
 
-  public static  class  Partition<T> extends AbstractList<List<T>> {
-      public final  List<T> list;
-      public   final  int size;
-      public Partition(List<T>list,int size){
-        this.list = list;
-        this.size= size;
-      }
+  public static class Partition<T> extends AbstractList<List<T>> {
+
+    public final List<T> list;
+    public final int size;
+
+    public Partition(List<T> list, int size) {
+      this.list = list;
+      this.size = size;
+    }
 
     @Override
     public List<T> get(int index) {
@@ -33,12 +35,14 @@ public class ListUtils {
       } else if (index < 0) {
         throw new IndexOutOfBoundsException("Index " + index + " must not be negative");
       } else if (index >= listSize) {
-        throw new IndexOutOfBoundsException("Index " + index + " must be less than size " + listSize);
+        throw new IndexOutOfBoundsException(
+            "Index " + index + " must be less than size " + listSize);
       } else {
         int start = index * this.size;
         int end = Math.min(start + this.size, this.list.size());
         return this.list.subList(start, end);
       }
+//      return null;
     }
 
     @Override

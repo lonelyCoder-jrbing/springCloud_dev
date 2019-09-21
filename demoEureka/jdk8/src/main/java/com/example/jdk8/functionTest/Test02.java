@@ -10,8 +10,8 @@ public class Test02 implements MyInterface {
   }
 
   public static void main(String[] args) {
-    Test02 t= new Test02();
+    Test02 t = new Test02();
     String name = t.getName();
-    System.out.println("name:   "+name);
+    System.out.println("name:   " + name);
   }
 }

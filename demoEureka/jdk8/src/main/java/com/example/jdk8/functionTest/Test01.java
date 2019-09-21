@@ -3,7 +3,7 @@ package com.example.jdk8.functionTest;
 import java.util.function.Function;
 
 public class Test01 {
-
+   //用在支持lambda表达式,接口中的apply方法，是接受输入的参数方法。输入的值使用lamda表达式进行处理，然后返回结果。
   public static void main(String[] args) {
 
     Function<Integer, Integer> name = e -> e * 2;
@@ -18,6 +18,7 @@ public class Test01 {
     Integer num3 = name.compose(square).apply(3);
     System.out.println(num3);
 
+       
 
   }
 

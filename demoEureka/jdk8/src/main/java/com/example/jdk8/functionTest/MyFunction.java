@@ -2,12 +2,12 @@ package com.example.jdk8.functionTest;
 
 import java.util.function.Function;
 
-public class MyFunction implements Function<String,Integer> {
+public class MyFunction implements Function<Integer, String > {
+
 
   @Override
-  public Integer apply(String s) {
-    return s.codePointAt(3);
+  public String apply(Integer integer) {
+    String s = String.valueOf(integer);
+    return s;
   }
-
-
 }
