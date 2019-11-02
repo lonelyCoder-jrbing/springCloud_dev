@@ -11,7 +11,13 @@
     <modules>
         <module>consumer</module>
         <module>dao</module>
-      <module>kafkademo</module>
+        <module>demoexception</module>
+        <module>eureka</module>
+        <module>feignTest</module>
+        <module>jdk8</module>
+        <module>producer</module>
+        <module>service</module>
+        <module>zookeeper-client</module>
     </modules>
 
 
