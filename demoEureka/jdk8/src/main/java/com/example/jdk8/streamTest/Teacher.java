@@ -6,6 +6,16 @@ import lombok.Data;
 @Data
 public class Teacher {
 
-  private Optional<String> name;
-  private Optional<Integer> age;
+  public Optional<String> name;
+  public Optional<Integer> age;
+  public Optional<Double> income;
+
+  public Teacher() {
+  }
+
+
+  public Teacher(Optional<String> name, Optional<Integer> age) {
+    this.name = name;
+    this.age = age;
+  }
 }

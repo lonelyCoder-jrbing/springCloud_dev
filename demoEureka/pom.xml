@@ -18,6 +18,7 @@
         <module>producer</module>
         <module>service</module>
         <module>zookeeper-client</module>
+        <module>algorithm</module>
     </modules>
 
 

@@ -15,9 +15,7 @@ public interface SecurityUser {
 
     List<String> fetchLocations();
 
-    default <T> T fetchProperties(String key) {
-        return null;
-    }
+
 
 
 }

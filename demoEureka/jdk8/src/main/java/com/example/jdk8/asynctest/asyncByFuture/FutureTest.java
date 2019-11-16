@@ -11,7 +11,7 @@ import java.util.concurrent.Future;
 import java.util.function.Supplier;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import sun.jvm.hotspot.tools.ObjectHistogram;
+import org.slf4j.Logger;
 
 @Slf4j
 public class FutureTest {
@@ -20,21 +20,21 @@ public class FutureTest {
 
   @Test
   public void test01() throws IOException, ExecutionException, InterruptedException {
-    log.info("============maink begin ===================");
+//    Logger("============maink begin ===================");
     ExecutorService executorService = Executors.newFixedThreadPool(1);
     Future<Object> future = executorService.submit(new Callable<Object>() {
 
       @Override
       public Object call() throws Exception {
-        log.info("task   begin...");
+//        log.info("task   begin...");
         Thread.sleep(2000);
-        log.info("task     end......");
+//        log.info("task     end......");
         return 3;
       }
     });
 //    Integer integer = (Integer) future.get();
-    log.info("===========result=============={}");
-    log.info("===============main   end=========================");
+//    log.info("===========result=============={}");
+//    log.info("===============main   end=========================");
 //    System.in.read();
   }
 

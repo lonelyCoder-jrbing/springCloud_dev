@@ -13,6 +13,7 @@ public class Test01 {
 
 
   public static void main(String[] args) {
+    String[]str = {"jrbing001","jrbing002"};
     ArrayList<Student> students = Lists.newArrayList();
     Student student = new Student();
     student.setName("第一位");
@@ -56,6 +57,22 @@ public class Test01 {
         .collect(Collectors.groupingBy(Student::getNumber));
     System.out.println("collect2:  " + collect2);
   }
+public static List<Student>  getStudent(){
+  ArrayList<Student> students = Lists.newArrayList();
+  Student student = new Student();
+  student.setName("第一位");
+  student.setNumber(1);
+  students.add(student);
+  Student student1 = new Student();
+  student1.setNumber(2);
+  student1.setName("第二位");
+  students.add(student1);
 
+  Student student2 = new Student();
+  student2.setNumber(2);
+  student2.setName("第仨位");
+  students.add(student2);
+  return students;
+}
 
 }
