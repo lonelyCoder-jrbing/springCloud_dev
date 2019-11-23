@@ -10,7 +10,10 @@ public class Test01 {
     // 使用lambda表达式实现函数式接口
     // (x)->(x)+20 输入一个参数x，进行加法运算，返回一个结果
     // 所以该lambda表达式可以实现Function接口
-    int res1 = modifyTheValue(myNumber, (x) -> x + 20);
+
+    Function<Integer,Integer> function = e->e+1;
+//    int res1 = modifyTheValue(myNumber, (x) -> x + 20);
+    int res1 = modifyTheValue(myNumber, function);
     System.out.println(res1); // 30
     //  使用匿名内部类实现
     int res2 = modifyTheValue(myNumber, new Function<Integer, Integer>() {

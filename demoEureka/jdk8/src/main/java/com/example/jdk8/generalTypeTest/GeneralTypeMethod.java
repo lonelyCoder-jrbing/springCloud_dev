@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class GeneralTypeMethod<T> {
+public class GeneralTypeMethod <T>{
 
   public static void main(String[] args) {
     List<Integer> lsit = new ArrayList<>();

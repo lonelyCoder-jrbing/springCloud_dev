@@ -9,6 +9,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.function.Supplier;
+
+import com.example.intercepter.UserService;
+import com.example.jdk8.streamTest.Teacher;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -57,6 +60,8 @@ public class FutureTest {
     }, executor);
     future.thenAccept(e -> System.out.println(e));
     System.out.println("main函数执行结束");
+
+
   }
 
 }

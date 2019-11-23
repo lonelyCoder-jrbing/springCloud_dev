@@ -15,7 +15,13 @@ public class Demo01 {
         System.out.println("function test:   "+i);
         long l = f8.applyAsLong(10);
         System.out.println("long:   "+l);
-
+        demo01.test02(10, new Function<Integer, Integer>() {
+            @Override
+            public Integer apply(Integer integer) {
+                double random = Math.random();
+                return (int)(integer+random);
+            }
+        });
 
     }
 
@@ -31,6 +37,9 @@ public class Demo01 {
 
 
     public int test01(int x,Function<Integer,Integer> function){
+        return function.apply(x);
+    }
+    public int test02(int x , Function<Integer,Integer> function){
         return function.apply(x);
     }
 

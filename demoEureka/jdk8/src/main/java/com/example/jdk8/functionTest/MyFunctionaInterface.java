@@ -8,7 +8,7 @@ public interface MyFunctionaInterface<T, R> {
 
   //  R dosomthing();
   public static void doSomething() {
-    System.out.println("do something.....");
+    System.out.println("do service.....");
   }
 
   default void myethod() {

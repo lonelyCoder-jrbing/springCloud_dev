@@ -13,7 +13,7 @@ public class Demo01 {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println("do something ....");
+                System.out.println("do service ....");
             }
         });
         System.out.println(thread.getName());

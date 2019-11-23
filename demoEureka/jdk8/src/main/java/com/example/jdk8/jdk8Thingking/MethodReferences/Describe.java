@@ -1,7 +1,10 @@
 package com.example.jdk8.jdk8Thingking.MethodReferences;
 
 class Describe {
-  void show(String msg) { // [2]
-    System.out.println(msg);
+  void show(String msg) {
+    String s = "test consumer"+msg;
+
+    // [2]
+    System.out.println(s);
   }
 }

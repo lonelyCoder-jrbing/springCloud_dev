@@ -1,6 +1,11 @@
 package com.example.jdk8.jdk8Thingking.MethodReferences;
 
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+
 //回调函数  ,注意一下
 // [2] show() 的签名（参数类型和返回类型）符合 Callable 的 call() 的签名
 public class MethodReferences {
@@ -31,7 +36,23 @@ public class MethodReferences {
 
     public static void main(String[] args) {
         Describe d = new Describe();
+        BiConsumer<Describe, String> show = Describe::show;
+        Consumer<String> show1 = d::show;
+        show1.accept(String.format("%s,test consumer","test"));
+
+
+        List<String> integers = Arrays.asList("1", "2", "3", "4", "5");
+
+
+        System.out.println("================consumer test===============");
+
+        integers.stream().forEach( d::show);
+
+        System.out.println("================consumer test===============");
         Callable c =d::show; // [6]
+
+
+
         c.call("call()"); // [7]
 
         c = MethodReferences::hello; // [8]

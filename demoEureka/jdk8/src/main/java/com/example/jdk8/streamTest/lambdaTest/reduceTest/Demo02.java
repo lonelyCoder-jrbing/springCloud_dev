@@ -59,10 +59,11 @@ public class Demo02 {
                 "该接口内三个参数为同一类型，并作出操作(T x,T y)->{return ?(T)}");
         Stream<Integer> stream1=Stream.of(1,2,3);
         //进行两次聚合
-        Integer reduce1 = stream1.reduce(10, (x, y) -> x + y, (x, y) -> x * y);
-//        Integer reduce1 = stream1.parallel().reduce(10, (x, y) -> x + y, (x, y) -> x * y);
+//        Integer reduce1 = stream1.reduce(10, (x, y) -> x + y, (x, y) -> x * y);
+        Integer reduce2 = stream1.parallel().reduce(10, (x, y) -> x + y, (x, y) -> x * y);
 
-        System.out.println("reduce1"+reduce1);
+//        System.out.println("reduce1"+reduce1);
+        System.out.println("reduce2:"+reduce2);
         out.println("非并行情况下的第三个参数BinaryOperator " +
                 "combiner(合成器)\n会对第二个参数BiFunction accumulator(累加器) 产生什么影响？\n" +
                 "会对该函数运行结果产生什么影响？\n" +

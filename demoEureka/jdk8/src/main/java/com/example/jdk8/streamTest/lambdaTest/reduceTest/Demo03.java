@@ -19,7 +19,8 @@ public class Demo03 {
         });
         System.out.println("reduce"+(reduce.get()));
         System.out.println("---------------------------------");
-        Stream.of(1, 2, 3, 4).reduce((x, y) -> x+y);
+        Optional<Integer> reduce1 = Stream.of(1, 2, 3, 4).reduce((x, y) -> x + y);
+        System.out.println(reduce1.get());
 
     }
 
