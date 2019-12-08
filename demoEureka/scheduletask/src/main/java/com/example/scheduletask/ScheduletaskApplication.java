@@ -8,9 +8,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling    //允许进行定时任务
 public class ScheduletaskApplication {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    SpringApplication.run(ScheduletaskApplication.class, args);
-  }
+        SpringApplication.run(ScheduletaskApplication.class, args);
+    }
 
 }

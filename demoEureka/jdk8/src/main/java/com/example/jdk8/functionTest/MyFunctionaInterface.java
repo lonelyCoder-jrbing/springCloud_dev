@@ -4,14 +4,14 @@ package com.example.jdk8.functionTest;
 @FunctionalInterface
 public interface MyFunctionaInterface<T, R> {
 
-  T convert(R r);
+    T convert(R r);
 
-  //  R dosomthing();
-  public static void doSomething() {
-    System.out.println("do service.....");
-  }
+    //  R dosomthing();
+    public static void doSomething() {
+        System.out.println("do service.....");
+    }
 
-  default void myethod() {
-    System.out.println("my default method.....");
-  }
+    default void myethod() {
+        System.out.println("my default method.....");
+    }
 }

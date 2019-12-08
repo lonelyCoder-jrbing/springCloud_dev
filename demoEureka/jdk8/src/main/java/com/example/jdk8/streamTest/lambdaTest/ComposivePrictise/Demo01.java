@@ -33,13 +33,13 @@ public class Demo01 {
         CollectionProviders.ListProvider provider = CollectionProviders.getProvider();
         List<Teacher> teacherList = provider.getTeacherList();
         Map<Optional<Integer>, Optional<String>> collect = teacherList.stream().collect(Collectors.toMap(Teacher::getAge, Teacher::getName, (v1, v2) -> {
-        //lamda 表达式再将list转为map的操作中，如果key值出现重复，以上写法会将k2对应的value覆盖k1对应的value
+            //lamda 表达式再将list转为map的操作中，如果key值出现重复，以上写法会将k2对应的value覆盖k1对应的value
             System.out.println("v1:" + v1);
             System.out.println("v2:" + v2);
             return v2;
         }));
-        collect.values().forEach(e->{
-            System.out.println("value:   "+e.get());
+        collect.values().forEach(e -> {
+            System.out.println("value:   " + e.get());
         });
     }
 }

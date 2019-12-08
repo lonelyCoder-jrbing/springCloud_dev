@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -41,6 +42,11 @@ public class Demo02 {
             }
         });
         System.out.println("reduce result :" + reduce);
+        Stream<String> stream4 = Stream.of("as1", "a12", "nmm1", "cc2", "ac3", "ab4");
+        //这种用法的作用也可以使用max代替
+        String reduce1 = stream4.reduce("", (x, y) -> x.length() - y.length() > 0 ? x : y);
+        System.out.println("reduceTest:   "+reduce1);
+
 
         out.println("初始化参数为一个集合，将流内所有符合条件的元素筛选出来加入到该初始参数中");
         Stream<String> stream = Stream.of("as", "ai", "nmm", "cc", "ac", "ab");
@@ -57,21 +63,20 @@ public class Demo02 {
                 "首参U分别与流内每个值计算完毕后，由第三个参数对这些值做出整合(该参数要求实现\n" +
                 "BinaryOperator接口并给出一个单值计算的行为),即，\n" +
                 "该接口内三个参数为同一类型，并作出操作(T x,T y)->{return ?(T)}");
-        Stream<Integer> stream1=Stream.of(1,2,3);
+        Stream<Integer> stream1 = Stream.of(1, 2, 3);
         //进行两次聚合
 //        Integer reduce1 = stream1.reduce(10, (x, y) -> x + y, (x, y) -> x * y);
+        //11*13*16
         Integer reduce2 = stream1.parallel().reduce(10, (x, y) -> x + y, (x, y) -> x * y);
 
 //        System.out.println("reduce1"+reduce1);
-        System.out.println("reduce2:"+reduce2);
+        System.out.println("reduce2:" + reduce2);
         out.println("非并行情况下的第三个参数BinaryOperator " +
                 "combiner(合成器)\n会对第二个参数BiFunction accumulator(累加器) 产生什么影响？\n" +
                 "会对该函数运行结果产生什么影响？\n" +
                 "答案是：第三个参数无效。\n" +
                 "符合预期的说法：非并行情况下第三个参数根本就不需要，不会对该函数产生任何影响\n" +
                 "Debug:该函数执行完第二个参数后直接停止运行，根本没有访问到第三个参数去执行");
-
-
 
 
     }

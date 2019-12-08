@@ -19,7 +19,7 @@ public class Demo01 {
             Person person = new Person();
             person.setName("Name" + i);
             person.setAge(i);
-            person.setSex(i%2);
+            person.setSex(i % 2);
             return person;
         }).collect(Collectors.toList());
         List<Person> newPersons2 = filterUsingPredicate(persons, rules);
@@ -35,7 +35,6 @@ public class Demo01 {
                         .reduce(t -> true, Predicate::and)
                         .test(ele)).collect(Collectors.toList());
     }
-
 
 
     /**

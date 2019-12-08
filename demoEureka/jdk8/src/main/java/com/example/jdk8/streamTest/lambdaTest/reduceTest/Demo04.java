@@ -36,7 +36,7 @@ public class Demo04 {
         list.forEach(System.out::println);
     }
 
-  public   static List<Teacher> teacherList = null;
+    public static List<Teacher> teacherList = null;
 
     @Before
     public void before() {
@@ -61,17 +61,17 @@ public class Demo04 {
     @Test
     public void test02() {
         List<Teacher> teacherList = CollectionProviders.getProvider().getTeacherList();
-            int reduce = teacherList.stream().mapToInt(t -> t.getAge().get()).reduce(0, (sum, intItem) -> {
+        int reduce = teacherList.stream().mapToInt(t -> t.getAge().get()).reduce(0, (sum, intItem) -> {
             sum += intItem;
             return sum;
         });
-        System.out.println("totalAge=    "+reduce);
+        System.out.println("totalAge=    " + reduce);
     }
+
     @Test
-    public void test03(){
+    public void test03() {
         List<Teacher> teacherList = CollectionProviders.getProvider().getTeacherList();
         int sum = teacherList.stream().mapToInt(t -> t.getAge().get()).sum();
-
 
 
     }

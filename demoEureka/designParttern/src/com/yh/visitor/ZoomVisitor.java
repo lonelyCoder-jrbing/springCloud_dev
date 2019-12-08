@@ -1,9 +1,9 @@
 package com.yh.visitor;
 
-public interface ZoomVisitor extends  ModellVisitor{
+public interface ZoomVisitor extends ModellVisitor {
 
 
-  void visit(Zoom zoom);
+    void visit(Zoom zoom);
 
 
 }

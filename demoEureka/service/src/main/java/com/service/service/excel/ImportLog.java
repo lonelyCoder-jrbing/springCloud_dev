@@ -8,23 +8,23 @@ import lombok.Data;
 @Data
 public class ImportLog {
 
-  private Integer line;
+    private Integer line;
 
-  private boolean success;
+    private boolean success;
 
-  private String message;
+    private String message;
 
-  public ImportLog(Integer line, boolean success, String message) {
-    this.line = line;
-    this.success = success;
-    this.message = message;
-  }
+    public ImportLog(Integer line, boolean success, String message) {
+        this.line = line;
+        this.success = success;
+        this.message = message;
+    }
 
-  public static ImportLog success(Integer line) {
-    return new ImportLog(line, true, "ok");
-  }
+    public static ImportLog success(Integer line) {
+        return new ImportLog(line, true, "ok");
+    }
 
-  public static ImportLog failed(Integer line, String message) {
-    return new ImportLog(line, false, message);
-  }
+    public static ImportLog failed(Integer line, String message) {
+        return new ImportLog(line, false, message);
+    }
 }

@@ -9,14 +9,14 @@ import java.util.UUID;
 
 @RestController
 public class TestController {
- 
+
     private static final Logger log = LoggerFactory.getLogger(TestController.class);
- 
+
     private static final UUID INSTANCE_UUID = UUID.randomUUID();
- 
- 
+
+
     @GetMapping("/test")
-    public String test(){
+    public String test() {
         log.info("test :" + INSTANCE_UUID.toString());
         return INSTANCE_UUID.toString();
     }

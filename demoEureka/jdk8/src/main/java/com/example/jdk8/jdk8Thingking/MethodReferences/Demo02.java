@@ -14,37 +14,26 @@ public class Demo02 {
         }
         List<String> strings = Arrays.asList("1", "2", "3", "4");
         //返回值的类型和参数的类型不是一致的。
-        Function<String,String> function = (x)->x+"";
+        Function<String, String> function = (x) -> x + "";
         //返回值的类型和参数的类型是一致的..单个参数
-        UnaryOperator<String> operator = (x)->x;
+        UnaryOperator<String> operator = (x) -> x;
         //返回值是两个参数
         String jring = operator.apply("jring");
         System.out.println(jring);
         //无参数,返回值任意
-        Supplier<List<String>> supplier = ()->strings;
+        Supplier<List<String>> supplier = () -> strings;
         List<String> strings1 = supplier.get();
-        Consumer<String>consumer=x->x.split("\\$");
+        Consumer<String> consumer = x -> x.split("\\$");
         consumer.accept("");
-        Comparator<String> comparator = (x,y)->-1;
+        Comparator<String> comparator = (x, y) -> -1;
 
 
-
-
-
-        BinaryOperator<String> binaryOperator = (x,y)->x+y;
+        BinaryOperator<String> binaryOperator = (x, y) -> x + y;
         String binaryOperatorTest = binaryOperator.apply("jrbing", "byy");
         System.out.println(binaryOperatorTest);
 
 
         operator.apply("jrbing");
-
-
-
-
-
-
-
-
 
 
     }

@@ -7,14 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/api")
 public class ExceptionController {
-  @GetMapping("/exce")
-  public String showInfo(){
-    System.err.println("dddddddddddddd");
-    String info ="你好";
-    int a = 1/0;
-    return info;
-  }
-
+    @GetMapping("/exce")
+    public String showInfo() {
+        System.err.println("dddddddddddddd");
+        String info = "你好";
+        int a = 1 / 0;
+        return info;
+    }
 
 
 }

@@ -11,10 +11,12 @@ public final class UserContext {
     public static void setContext(SecurityUser user) {
         context.set(user);
     }
-    public static SecurityUser getContext(){
-        return (SecurityUser)context.get();
+
+    public static SecurityUser getContext() {
+        return (SecurityUser) context.get();
     }
-   public static void clear(){
-       context.remove();
-   }
+
+    public static void clear() {
+        context.remove();
+    }
 }

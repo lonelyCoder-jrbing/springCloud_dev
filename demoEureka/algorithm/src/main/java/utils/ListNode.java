@@ -5,11 +5,12 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class ListNode implements Iterable<ListNode> {
-  public int   val;
-  public   ListNode next;
-  public   ListNode head;
-  public   ListNode storage;
-  public   ListNode last;
+    public int val;
+    public ListNode next;
+    public ListNode head;
+    public ListNode storage;
+    public ListNode last;
+
     public ListNode() {
 
 
@@ -19,33 +20,32 @@ public class ListNode implements Iterable<ListNode> {
         this.val = val;
     }
 
-  public Iterator<ListNode> iterator() {
+    public Iterator<ListNode> iterator() {
 
 
+        return new myIterator();
+    }
+}
 
-
-      return new myIterator();
-      }
-  }
-    class myIterator implements  Iterator{
-     ListNode  data;
+class myIterator implements Iterator {
+    ListNode data;
 
 //     public myIterator() {
 //       this.data = head;
 //     }
 
-     public boolean hasNext() {
-      return false;
+    public boolean hasNext() {
+        return false;
     }
 
     public Object next() {
-      return null;
+        return null;
     }
 
     public void remove() {
 
     }
-  }
+}
 
 
 

@@ -1,6 +1,7 @@
 package com.example.jdk8.asynctest;
 
 import java.util.concurrent.Future;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 
@@ -11,41 +12,41 @@ import org.springframework.scheduling.annotation.Async;
  * */
 public class TestAsync {
 
-  @Autowired
-  private ExceptionHandlingAsyncTaskExecutor exceptionHandlingAsyncTaskExecutor = new ExceptionHandlingAsyncTaskExecutor();
+    @Autowired
+    private ExceptionHandlingAsyncTaskExecutor exceptionHandlingAsyncTaskExecutor = new ExceptionHandlingAsyncTaskExecutor();
 
-  public static void main(String[] args) throws InterruptedException {
-    System.out.println("=================main开始==================");
-    TestAsync t = new TestAsync();
-    t.doSomethingWrong();
-    System.out.println("==================main结束==================");
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("=================main开始==================");
+        TestAsync t = new TestAsync();
+        t.doSomethingWrong();
+        System.out.println("==================main结束==================");
 
-  }
+    }
 
-  @Async
-  public void doSomethingWrong() throws InterruptedException {
-    AppleTree apple = new AppleTree();
-    Thread appleThread = new Thread(apple, "apple tree get apple");
-    appleThread.start();
-    appleThread.join(344);
+    @Async
+    public void doSomethingWrong() throws InterruptedException {
+        AppleTree apple = new AppleTree();
+        Thread appleThread = new Thread(apple, "apple tree get apple");
+        appleThread.start();
+        appleThread.join(344);
 //      System.out.println("我先弄，你慢慢来。。。。");
 //    exceptionHandlingAsyncTaskExecutor.execute(appleThread);
 
-  }
-
-  public static class AppleTree implements Runnable {
-
-    @Override
-    public void run() {
-      try {
-        Thread.sleep(5000);
-        System.out.println("in autumn apple tree may get many apple");
-        System.out.println(Thread.currentThread().getName());
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-
     }
-  }
+
+    public static class AppleTree implements Runnable {
+
+        @Override
+        public void run() {
+            try {
+                Thread.sleep(5000);
+                System.out.println("in autumn apple tree may get many apple");
+                System.out.println(Thread.currentThread().getName());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
 
 }

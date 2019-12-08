@@ -10,16 +10,11 @@ import java.util.stream.Collectors;
 public class Demo01 {
 
     @Test
-    public void test01(){
+    public void test01() {
         List<Teacher> teacherList = CollectionProviders.getProvider().getTeacherList();
 
 //        teacherList.stream().collect(Collectors.groupingBy(e->{e.getName().get(),Collectors.mapping(e.getAge().get(),Collectors.toList())};);
     }
-
-
-
-
-
 
 
 }

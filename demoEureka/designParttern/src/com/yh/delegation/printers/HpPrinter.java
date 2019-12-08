@@ -5,8 +5,8 @@ import com.yh.delegation.Printer;
 
 public class HpPrinter implements Printer {
 
-  @Override
-  public void print() {
-    System.out.println(MESG.HP.getMesg());
-  }
+    @Override
+    public void print() {
+        System.out.println(MESG.HP.getMesg());
+    }
 }

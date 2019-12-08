@@ -10,19 +10,17 @@ public class MyGenerator implements Supplier {
     char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 
 
-
     @Override
     public Object get() {
-       return ""+letters[r.nextInt(letters.length)];
+        return "" + letters[r.nextInt(letters.length)];
     }
 
     public static void main(String[] args) {
-        String  str = (String)Stream.generate(new MyGenerator())
+        String str = (String) Stream.generate(new MyGenerator())
                 .limit(30).collect(Collectors.joining());
         System.out.println(str);
 
     }
-
 
 
 }

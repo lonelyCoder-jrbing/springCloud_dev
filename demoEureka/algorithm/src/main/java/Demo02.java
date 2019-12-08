@@ -6,7 +6,7 @@ public class Demo02 {
     public static void main(String[] args) {
         Demo02 demo02 = new Demo02();
 //        String[] strs = {"jrbing", "ingjrb", "int", "tin", "eat", "tea"};
-        String[]strs = {""};
+        String[] strs = {""};
         List<List<String>> lists = demo02.groupAnagrams(strs);
         System.out.println(lists);
     }
@@ -14,20 +14,24 @@ public class Demo02 {
     public List<List<String>> groupAnagrams(final String[] strs) {
 
         Map<Set<Character>, Integer> map = new HashMap<Set<Character>, Integer>();
-           if(strs.length==0){
-               return new ArrayList<List<String>>();
-           }
-           if(strs.length==1&&"".equals(strs[0])){
-               return new ArrayList<List<String>>(){{add(new ArrayList<String>(){{add("");}});}};
-           }
+        if (strs.length == 0) {
+            return new ArrayList<List<String>>();
+        }
+        if (strs.length == 1 && "".equals(strs[0])) {
+            return new ArrayList<List<String>>() {{
+                add(new ArrayList<String>() {{
+                    add("");
+                }});
+            }};
+        }
 
 
         for (String e : strs) {
             Set<Character> strSet = new HashSet<Character>();
-                char[] chars = e.toCharArray();
-                for (Character r : chars) {
-                    strSet.add(r);
-                }
+            char[] chars = e.toCharArray();
+            for (Character r : chars) {
+                strSet.add(r);
+            }
 
             map.put(strSet, e.length());
         }

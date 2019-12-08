@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 public class OrderImportContext {
 
     private HttpServletRequest request;
+
     public HttpServletRequest getRequest() {
         return request;
     }

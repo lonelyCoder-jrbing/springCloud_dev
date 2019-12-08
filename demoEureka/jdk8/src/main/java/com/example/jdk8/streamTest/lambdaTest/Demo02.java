@@ -15,8 +15,9 @@ public class Demo02 {
         Test01 t = new Test01();
         List<Student> filt = t.getStudent().stream().filter(e -> e.getName().equals("第一位")).collect(Collectors.toList());
         System.out.println(filt);
-        return  filt.size()==0;
+        return filt.size() == 0;
     }
+
     @Test
     public void test01() {
 //这种方法相当于是将函数式接口进行了实现

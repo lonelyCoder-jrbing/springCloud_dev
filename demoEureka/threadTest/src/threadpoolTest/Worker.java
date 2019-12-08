@@ -1,9 +1,8 @@
 package threadpoolTest;
 
 
-
-public class Worker implements  Runnable{
- private final Task task;
+public class Worker implements Runnable {
+    private final Task task;
 
     public Worker(final Task task) {
         this.task = task;

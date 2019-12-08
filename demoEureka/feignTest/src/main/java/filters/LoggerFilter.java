@@ -1,5 +1,6 @@
 package filters;
 //import com.alibaba.fastjson.JSON;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -35,7 +36,7 @@ public class LoggerFilter {
         try {
             result = pjp.proceed();
             log.info("RequestTarget : " + appName + "." + name + "." + method);
-            if(!method.toLowerCase().contains("import")){
+            if (!method.toLowerCase().contains("import")) {
 //                log.info("RequestParam : " + JSON.toJSON(pjp.getArgs()));
             }
             if (result instanceof ResponseEntity) {

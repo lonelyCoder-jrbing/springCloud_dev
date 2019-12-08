@@ -15,12 +15,12 @@ public class TestReflect {
 //        StealMethod s = new HitAndStoneMethod();
         TemplatexClass item = new Student("jrbing");
         String s1 = printClassInfo(item.getClass());
-        String methodName = "set"+s1;
+        String methodName = "set" + s1;
         BaseEntity b = new BaseEntity();
-       //2.一参
-        Method method2 = b.getClass().getMethod(methodName,item.getClass());
-        method2.invoke(b,item);
-        System.out.println("getStudent:     "+b.getStudent());
+        //2.一参
+        Method method2 = b.getClass().getMethod(methodName, item.getClass());
+        method2.invoke(b, item);
+        System.out.println("getStudent:     " + b.getStudent());
     }
 
     String printClassInfo(Class c) {

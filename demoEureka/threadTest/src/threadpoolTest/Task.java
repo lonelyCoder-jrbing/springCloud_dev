@@ -8,8 +8,6 @@ public abstract class Task {
     private final int timeMS;
 
 
-
-
     public Task(int timeMS) {
         this.id = ID_GENERATOR.incrementAndGet();
         this.timeMS = timeMS;

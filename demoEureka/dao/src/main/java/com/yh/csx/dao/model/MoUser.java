@@ -12,7 +12,7 @@ public class MoUser {
     }
 
     public MoUser(int age, String name) {
-        this.age= age;
+        this.age = age;
         this.name = name;
     }
 }

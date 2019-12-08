@@ -5,18 +5,18 @@ import java.util.function.Consumer;
 
 public class DealNumber implements Consumer<Integer> {
 
-  private MyConsumerTest test;
+    private MyConsumerTest test;
 
-  public DealNumber(MyConsumerTest test) {
-    this.test = test;
-    test.ints = new ArrayList<Integer>();
-  }
-
-  @Override
-  public void accept(Integer integer) {
-    if (integer > 3) {
-      test.ints.add(integer);
+    public DealNumber(MyConsumerTest test) {
+        this.test = test;
+        test.ints = new ArrayList<Integer>();
     }
-  }
+
+    @Override
+    public void accept(Integer integer) {
+        if (integer > 3) {
+            test.ints.add(integer);
+        }
+    }
 
 }

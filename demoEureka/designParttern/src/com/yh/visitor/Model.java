@@ -1,8 +1,8 @@
 package com.yh.visitor;
 
 
-public  abstract  class Model {
+public abstract class Model {
 
-     public abstract void accept(ModellVisitor modellVisitor );
+    public abstract void accept(ModellVisitor modellVisitor);
 
 }

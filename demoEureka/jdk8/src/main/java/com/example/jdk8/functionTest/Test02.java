@@ -41,7 +41,7 @@ public class Test02 implements MyInterface {
             }
         }
 
-        if (new BigInteger(sb.toString(),10).subtract(new BigInteger(String.valueOf(Integer.MAX_VALUE),10)).longValue()<0l||Long.valueOf(sb.toString()) <Integer.MIN_VALUE) {
+        if (new BigInteger(sb.toString(), 10).subtract(new BigInteger(String.valueOf(Integer.MAX_VALUE), 10)).longValue() < 0l || Long.valueOf(sb.toString()) < Integer.MIN_VALUE) {
             return Integer.MAX_VALUE;
         } else {
             return Integer.valueOf(sb.toString());

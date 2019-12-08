@@ -1,5 +1,5 @@
 package com.yh.visitor;
 
-public interface AllmodelVisitor extends ZoomVisitor,HeysVisitor {
+public interface AllmodelVisitor extends ZoomVisitor, HeysVisitor {
 
 }

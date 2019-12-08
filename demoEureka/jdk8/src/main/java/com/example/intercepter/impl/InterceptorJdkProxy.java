@@ -21,27 +21,27 @@ public class InterceptorJdkProxy implements InvocationHandler {
 
     public static Object bind(Object target, String interceptorClass) {
         return Proxy.newProxyInstance(target.getClass().getClassLoader(),
-                    target.getClass().getInterfaces(),
-                new InterceptorJdkProxy(target,interceptorClass));
+                target.getClass().getInterfaces(),
+                new InterceptorJdkProxy(target, interceptorClass));
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         // 如果没有设置拦截器，直接反射原方法
-        if (interceptorClass == null){
-            return method.invoke(target,args);
+        if (interceptorClass == null) {
+            return method.invoke(target, args);
         }
 
         Object result = null;
 
         Interceptor interceptor = (Interceptor) Class.forName(interceptorClass).newInstance();
-        if (interceptor.before(proxy,target,method,args)) {
-            result = method.invoke(target,args);
+        if (interceptor.before(proxy, target, method, args)) {
+            result = method.invoke(target, args);
         } else {
-            interceptor.around(proxy,target,method,args);
+            interceptor.around(proxy, target, method, args);
         }
 
-        interceptor.after(proxy,target,method,args);
+        interceptor.after(proxy, target, method, args);
 
         return result;
     }

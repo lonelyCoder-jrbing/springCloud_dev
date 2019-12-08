@@ -5,31 +5,31 @@ import lombok.Data;
 @Data
 public class Student {
 
-  private String name;
-  private Integer number;
-  private Teacher teacher;
+    private String name;
+    private Integer number;
+    private Teacher teacher;
 
-  public Teacher getTeacher() {
-    return teacher;
-  }
+    public Teacher getTeacher() {
+        return teacher;
+    }
 
-  public void setTeacher(Teacher teacher) {
-    this.teacher = teacher;
-  }
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public Integer getNumber() {
-    return number;
-  }
+    public Integer getNumber() {
+        return number;
+    }
 
-  public void setNumber(Integer number) {
-    this.number = number;
-  }
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
 }

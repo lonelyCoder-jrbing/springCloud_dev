@@ -21,9 +21,13 @@ public class Demo01 {
             new User(4, "赵六", 32, User.Sex.FEMALE));
 
     public static void main(String[] args) {
+        System.out.println("===testAverage=============");
         testAverage();
+        System.out.println("====getRangeage============");
         getRangeage();
+        //====getUserNumByGender=====
         getUserNumByGender();
+
         getUserNameByGender();
         getSumAgeGroupingByGender();
         getAverageNumByGender();
@@ -101,7 +105,7 @@ public class Demo01 {
     public static void getReduceAge() {
 //        int sum = users.parallelStream().mapToInt(User::getAge).sum();
         int sum = users.parallelStream().mapToInt(User::getAge).reduce(0, (x, y) -> x + y);
-        System.out.println("求所有的用户的年龄总和"+sum);
+        System.out.println("求所有的用户的年龄总和" + sum);
     }
 
 }

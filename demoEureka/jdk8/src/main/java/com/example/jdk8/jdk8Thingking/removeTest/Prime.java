@@ -30,7 +30,7 @@ public class Prime {
                 .limit(10)
                 .forEach(n -> System.out.format("%d ", n));
         long l1 = System.currentTimeMillis();
-        System.out.println("used time"+(l1-l));
+        System.out.println("used time" + (l1 - l));
 
 
     }

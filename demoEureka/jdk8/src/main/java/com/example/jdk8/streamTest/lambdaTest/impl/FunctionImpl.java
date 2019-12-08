@@ -9,6 +9,6 @@ public class FunctionImpl implements FunctionalInterfaceTest {
 
     @Override
     public void getName(Student x) {
-        System.out.println("hello world"+x);
+        System.out.println("hello world" + x);
     }
 }

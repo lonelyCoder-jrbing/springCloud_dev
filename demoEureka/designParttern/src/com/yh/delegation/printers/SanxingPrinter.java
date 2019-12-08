@@ -5,8 +5,8 @@ import com.yh.delegation.Printer;
 
 public class SanxingPrinter implements Printer {
 
-  @Override
-  public void print() {
-    System.out.println(MESG.SANXING.getMesg());
-  }
+    @Override
+    public void print() {
+        System.out.println(MESG.SANXING.getMesg());
+    }
 }

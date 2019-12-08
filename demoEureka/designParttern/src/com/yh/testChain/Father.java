@@ -8,7 +8,8 @@ public abstract class Father {
         this.nextSon = nextSon;
     }
 
-    public void dosomething(){}
+    public void dosomething() {
+    }
 
 
 }

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-public class CraftLineImportProvider extends AbstractOrderImportProvider< MemberTagModel,MemberTagEntity> {
+public class CraftLineImportProvider extends AbstractOrderImportProvider<MemberTagModel, MemberTagEntity> {
     @Override
     protected Class importTarget() {
         return MemberTagModel.class;

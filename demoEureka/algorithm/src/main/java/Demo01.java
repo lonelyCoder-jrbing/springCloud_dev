@@ -11,7 +11,6 @@ public class Demo01 {
         ListNode listNode = demo01.madeListNode(10);
         ListNode listNode02 = demo01.madeListNode(10);
         ListNode listNode1 = demo01.mergeTwoLists(listNode, listNode02);
-        
 
 
     }

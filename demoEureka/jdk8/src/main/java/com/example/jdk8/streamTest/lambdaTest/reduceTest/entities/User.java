@@ -55,7 +55,7 @@ public class User {
         this.gender = gender;
     }
 
-    public static class Averager  {
+    public static class Averager {
 
         private int total = 0;
 
@@ -71,7 +71,7 @@ public class User {
 
         }
 
-
+       //可以将其看做是consumer
         public void accept(int i) {
             total += i;
             count++;

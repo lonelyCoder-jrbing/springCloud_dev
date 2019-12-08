@@ -1,7 +1,7 @@
 package com.yh.ConverterTest;
 
 @FunctionalInterface
-public interface Converter<T,R> {
+public interface Converter<T, R> {
 
-  R convert(T source);
+    R convert(T source);
 }

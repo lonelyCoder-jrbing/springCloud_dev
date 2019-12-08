@@ -16,6 +16,4 @@ public interface SecurityUser {
     List<String> fetchLocations();
 
 
-
-
 }

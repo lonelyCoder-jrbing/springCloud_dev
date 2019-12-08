@@ -49,8 +49,8 @@ public class Strategize {
         //=====================test01============
         Strategy[] strategies1 = {Unrelated::twice};
         Strategize s2 = new Strategize("strange!");
-          s2.changeStrategy(strategies1[0]);
-          s.communicate();
+        s2.changeStrategy(strategies1[0]);
+        s.communicate();
 //        strategies1[0].approach("strange!");
 
 

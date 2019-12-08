@@ -32,15 +32,15 @@ public class ExcelUtil<I> extends AnalysisEventListener {
 
     }
 
-    public   List<I> readExcel(HttpServletRequest request,Class clazz)  {
+    public List<I> readExcel(HttpServletRequest request, Class clazz) {
         BufferedInputStream buffer = null;
-        List<I> list =null;
+        List<I> list = null;
         try {
             buffer = new BufferedInputStream(request.getInputStream());
             ExcelUtil listener = new ExcelUtil();
             ExcelReader excelReader = new ExcelReader(buffer, ExcelTypeEnum.XLS, listener);
             excelReader.read(new Sheet(1, 0, clazz));
-             list = listener.getDatas();
+            list = listener.getDatas();
 
             //excel中第一行为栏目，必然是存在一行的
             if (CollectionUtils.isEmpty(list) || list.size() < 2) {

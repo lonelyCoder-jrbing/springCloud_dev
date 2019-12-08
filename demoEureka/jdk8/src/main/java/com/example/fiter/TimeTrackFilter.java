@@ -13,7 +13,7 @@ public class TimeTrackFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-       this.filterConfig = filterConfig;
+        this.filterConfig = filterConfig;
     }
 
     @Override
@@ -21,7 +21,7 @@ public class TimeTrackFilter implements Filter {
         Date startTime, endTime;
         double totalTime;
         startTime = new Date();
-        filterChain.doFilter(request,response);
+        filterChain.doFilter(request, response);
         endTime = new Date();
         totalTime = endTime.getTime() - startTime.getTime();
         totalTime = totalTime / 1000; //Convert from milliseconds to seconds
@@ -29,7 +29,7 @@ public class TimeTrackFilter implements Filter {
         PrintWriter writer = new PrintWriter(sw);
         writer.println();
         writer.println("===============");
-        writer.println("Total elapsed time is: " + totalTime + " seconds." );
+        writer.println("Total elapsed time is: " + totalTime + " seconds.");
         writer.println("===============");
         // Log the resulting string
         writer.flush();
@@ -39,6 +39,6 @@ public class TimeTrackFilter implements Filter {
 
     @Override
     public void destroy() {
-              this.filterConfig = null;
+        this.filterConfig = null;
     }
 }

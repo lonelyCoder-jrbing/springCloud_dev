@@ -4,9 +4,9 @@ public class Demo01 {
 
     public static void main(String[] args) throws InterruptedException {
 //能够接受lambda表达式的参数类型，是一个只包含一个方法的函数式接口。
-      new Thread(()->{
-          System.out.println("hello thread");
-      });
+        new Thread(() -> {
+            System.out.println("hello thread");
+        });
     }
 
     public void testhread() throws InterruptedException {

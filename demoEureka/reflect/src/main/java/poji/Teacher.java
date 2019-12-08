@@ -1,4 +1,4 @@
 package poji;
 
-public class Teacher extends TemplatexClass{
+public class Teacher extends TemplatexClass {
 }

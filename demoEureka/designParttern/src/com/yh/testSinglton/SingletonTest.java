@@ -7,17 +7,19 @@ import java.net.BindException;
  */
 public class SingletonTest {
     public static volatile SingletonTest instance = null;  //volatile
-  static int index = 0;
+    static int index = 0;
+
     //将构造其声明为私有的
     private SingletonTest() {
         System.out.println("创建对象");
     }
+
     //方法前田间synchronize关键字
     public static synchronized SingletonTest getInstance() {
         if (null == instance) {
             instance = new SingletonTest();
             index++;
-            System.out.println("index....."+index);
+            System.out.println("index....." + index);
         }
         return instance;
     }

@@ -1,9 +1,10 @@
 package com.example.jdk8.jdk8Thingking.StaticGenerator;
 
 import java.util.stream.*;
+
 public class Fibonacci {
     int x = 1;
-    
+
     Stream<Integer> numbers() {
         return Stream.iterate(0, i -> {
             int result = x + i;
@@ -11,11 +12,11 @@ public class Fibonacci {
             return result;
         });
     }
-    
+
     public static void main(String[] args) {
         new Fibonacci().numbers()
-                       .skip(20) // 过滤前 20 个
-                       .limit(10) // 然后取 10 个
-                       .forEach(System.out::println);
+                .skip(20) // 过滤前 20 个
+                .limit(10) // 然后取 10 个
+                .forEach(System.out::println);
     }
 }

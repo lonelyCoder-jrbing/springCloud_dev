@@ -9,16 +9,16 @@ import java.util.List;
  */
 @Data
 public class OrderImportResult<T> {
-  private boolean success;
+    private boolean success;
 
-  private String message;
+    private String message;
 
-  private List<T> data;
+    private List<T> data;
 
-  private String downloadUrl;
+    private String downloadUrl;
 
-  public OrderImportResult() {
-    this.success = true;
-    this.message = "ok";
-  }
+    public OrderImportResult() {
+        this.success = true;
+        this.message = "ok";
+    }
 }

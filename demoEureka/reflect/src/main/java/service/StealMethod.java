@@ -5,11 +5,8 @@ import poji.Teacher;
 
 public interface StealMethod {
 
-     Student student=null;
-     Teacher teacher=null;
-
-
-
+    Student student = null;
+    Teacher teacher = null;
 
 
     String pickTarget();

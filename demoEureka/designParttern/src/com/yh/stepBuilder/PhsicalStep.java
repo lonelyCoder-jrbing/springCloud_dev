@@ -2,5 +2,5 @@ package com.yh.stepBuilder;
 
 
 public interface PhsicalStep {
-   BuilderStep graduateAfterPhsicalStep(String phsicalClass);
+    BuilderStep graduateAfterPhsicalStep(String phsicalClass);
 }

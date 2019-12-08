@@ -14,8 +14,6 @@ public class MethodReferences {
     }
 
 
-
-
     static class Description {
         String about;
 
@@ -38,7 +36,7 @@ public class MethodReferences {
         Describe d = new Describe();
         BiConsumer<Describe, String> show = Describe::show;
         Consumer<String> show1 = d::show;
-        show1.accept(String.format("%s,test consumer","test"));
+        show1.accept(String.format("%s,test consumer", "test"));
 
 
         List<String> integers = Arrays.asList("1", "2", "3", "4", "5");
@@ -46,11 +44,10 @@ public class MethodReferences {
 
         System.out.println("================consumer test===============");
 
-        integers.stream().forEach( d::show);
+        integers.stream().forEach(d::show);
 
         System.out.println("================consumer test===============");
-        Callable c =d::show; // [6]
-
+        Callable c = d::show; // [6]
 
 
         c.call("call()"); // [7]

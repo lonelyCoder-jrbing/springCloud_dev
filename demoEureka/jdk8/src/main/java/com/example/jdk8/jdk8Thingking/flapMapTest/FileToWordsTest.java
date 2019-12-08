@@ -16,7 +16,9 @@ public class FileToWordsTest {
 
 //        File directory = new File("abc.txt");
 //        String canonicalPath = directory.getCanonicalPath();
-//        System.out.println(canonicalPath);
+//        System.
+//
+//        out.println(canonicalPath);
 
         long timeBegin = System.currentTimeMillis();
         log.info("开始读取文件,并且开始使用mapreduce进行 计数,开始时间为:  {}", timeBegin);

@@ -1,5 +1,5 @@
 package com.yh.visitor;
 
 public interface HeysVisitor extends ModellVisitor {
-   void  visit(Heys heys);
+    void visit(Heys heys);
 }

@@ -10,10 +10,11 @@ public class Theif {
     }
 
 
-    public void changMethod(StealMethod method){
+    public void changMethod(StealMethod method) {
         this.method = method;
     }
-    public void steal(){
+
+    public void steal() {
         this.method.steal();
     }
 }

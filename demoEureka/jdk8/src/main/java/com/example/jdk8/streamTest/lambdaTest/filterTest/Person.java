@@ -1,14 +1,12 @@
 package com.example.jdk8.streamTest.lambdaTest.filterTest;
 
 public class Person {
-      private String name;
-      private int age;
-      private int sex;
+    private String name;
+    private int age;
+    private int sex;
 
 
-
-
-    public String  getName(  ) {
+    public String getName() {
         return name;
     }
 
@@ -31,9 +29,10 @@ public class Person {
     public void setSex(int sex) {
         this.sex = sex;
     }
-  public static boolean getStudent(){
-     return  false;
-  }
+
+    public static boolean getStudent() {
+        return false;
+    }
 
     @Override
     public String toString() {

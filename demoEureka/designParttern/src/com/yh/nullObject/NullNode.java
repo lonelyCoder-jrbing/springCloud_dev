@@ -2,10 +2,12 @@ package com.yh.nullObject;
 
 public class NullNode implements Node {
 
-    private NullNode(){}
+    private NullNode() {
+    }
+
     private static NullNode Instance = new NullNode();
 
-    public static Node getInstance(){
+    public static Node getInstance() {
         return Instance;
     }
 
@@ -27,7 +29,7 @@ public class NullNode implements Node {
 
     @Override
     public void walk() {
-     //do nothing
+        //do nothing
     }
 
     @Override

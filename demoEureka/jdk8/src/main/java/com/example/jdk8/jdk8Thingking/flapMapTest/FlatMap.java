@@ -9,5 +9,11 @@ public class FlatMap {
         Arrays.asList("1", "2", "3").stream()
                 .flatMap(i -> Stream.of("jrbing", "byy", "Beaker")).forEach(e -> System.out.println(e));
 
+        System.out.println("=================================");
+
+        Arrays.asList("1", "2", "3").stream()
+                .map(i -> Stream.of("jrbing", "byy", "Beaker")).forEach(e -> System.out.println(e.reduce((k,v)->k+"  "+v)));
+
+
     }
 }
