@@ -1,7 +1,8 @@
-package com.sring.spring.ioctest;
+package com.org.spring.ioctest.beanpostprocessorTest.configerations;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.factory.support.SimpleInstantiationStrategy;
 import org.springframework.stereotype.Component;
 
 import java.util.stream.IntStream;
@@ -10,12 +11,12 @@ import java.util.stream.IntStream;
 @Component
 public class MyBeanPostprocessor implements BeanPostProcessor {
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("postProcessorBeforeInitialization.." + beanName + "=>" + bean);
+        System.out.println("postProcessorBeforeInitialization.print bean name ........" + beanName + "=>" + bean);
         return bean;
     }
 
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("postprocessotAfterInitialization.." + beanName + "=>" + bean);
+        System.out.println("postprocessotAfterInitialization..print bean name..........." + beanName + "=>" + bean);
         return bean;
     }
 

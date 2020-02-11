@@ -8,7 +8,7 @@ public class ClientTest {
 
     public static void main(String[] args) {
         UserService userServiceProxy = (UserService) InterceptorJdkProxy
-                .bind(new UserServiceImpl(), "com.example.intercepter.impl.InterceptorImpl");
+                .bind(new UserServiceImpl(), "com.example.intercepter.service.InterceptorImpl");
         userServiceProxy.sayHelloworld();
     }
 

@@ -10,5 +10,4 @@ public class ClientTest {
                 .bind(new UserServiceImpl(), "com.example.intercepter.impl.InterceptorImpl");
         userServiceProxy.sayHelloworld();
     }
-
 }

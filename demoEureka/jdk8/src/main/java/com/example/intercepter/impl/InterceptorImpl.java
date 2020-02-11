@@ -9,7 +9,7 @@ public class InterceptorImpl implements Interceptor {
     @Override
     public boolean before(Object proxy, Object target, Method method, Object[] args) {
         System.out.println("反射方法前逻辑");
-        return false;
+        return true;
     }
 
     @Override

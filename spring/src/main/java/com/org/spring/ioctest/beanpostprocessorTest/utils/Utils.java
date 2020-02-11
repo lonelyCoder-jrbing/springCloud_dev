@@ -1,4 +1,4 @@
-package com.sring.spring.ioctest.utils;
+package com.org.spring.ioctest.beanpostprocessorTest.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

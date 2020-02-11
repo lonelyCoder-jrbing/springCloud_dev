@@ -33,8 +33,9 @@ public class InterceptorJdkProxy implements InvocationHandler {
         }
 
         Object result = null;
-
         Interceptor interceptor = (Interceptor) Class.forName(interceptorClass).newInstance();
+        //拿到interceptor之后，如果before方法返回的是true,通过jdk代理的方式拿到被代理对象的实例，
+        //如果返回的是false，则执行拦截器的around方法。
         if (interceptor.before(proxy, target, method, args)) {
             result = method.invoke(target, args);
         } else {

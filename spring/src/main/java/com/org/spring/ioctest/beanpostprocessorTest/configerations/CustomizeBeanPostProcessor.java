@@ -1,10 +1,12 @@
-package com.sring.spring.ioctest.beanpostprocessorTest;
+package com.org.spring.ioctest.beanpostprocessorTest.configerations;
 
-import com.sring.spring.ioctest.CalculateService;
-import com.sring.spring.ioctest.utils.Utils;
+import com.org.spring.ioctest.beanpostprocessorTest.service.CalculateService;
+import com.org.spring.ioctest.beanpostprocessorTest.utils.Utils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CustomizeBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
@@ -21,6 +23,7 @@ public class CustomizeBeanPostProcessor implements BeanPostProcessor {
         if ("calculateService".equals(beanName)) {
             Utils.printTrack("do postProcessor after initialazation");
         }
+        
         return bean;
     }
 }

@@ -1,4 +1,7 @@
-package com.sring.spring.ioctest;
+package com.org.spring.ioctest.beanpostprocessorTest.service;
+
+import java.io.IOException;
+import java.util.Map;
 
 public interface CalculateService {
     /**
@@ -23,4 +26,9 @@ public interface CalculateService {
      * @return
      */
     void setServiceDesc(String serviceDesc);
+
+
+    Map<String,Integer> getWordCountFromLogFile() throws IOException;
+
+
 }
