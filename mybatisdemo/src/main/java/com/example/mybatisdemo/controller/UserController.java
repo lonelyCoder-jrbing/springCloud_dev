@@ -1,5 +1,8 @@
 package com.example.mybatisdemo.controller;
 
+import com.example.mybatisdemo.domain.User;
+import com.example.mybatisdemo.dto.UserMsgLoadDTO;
+import com.example.mybatisdemo.intercepters.page.PageView;
 import com.example.mybatisdemo.serivce.UserService;
 import com.example.mybatisdemo.vo.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +27,7 @@ public class UserController {
 //    }
  
     @RequestMapping(value = "/getAll")
-    public ResultVo getAllUsers(){
-        return userService.getAllUsers();
+    public ResultVo getAllUsers(PageView<User> request){
+        return userService.getAllUsers(request);
     }
 }
