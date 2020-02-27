@@ -1,7 +1,9 @@
-package kafakaTest
+package kafakaTest.producer
+
 import java.util
 
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
+
 import scala.util.Random
 
 /**
@@ -12,7 +14,7 @@ object KafkaWordProducer {
     // kafka服务器地址
     val brokers = "localhost:9092"
     // kafka topic
-    val topic = "wordSender"
+    val topic = "jurongbing01"
     // 每秒发送三次消息
     val messagesPerSec = 3
     // 每次发送五个数字
@@ -29,7 +31,7 @@ object KafkaWordProducer {
           val message = new ProducerRecord[String, String](topic, null, str)
           producer.send(message)
       }
-      Thread.sleep(1000)
+      Thread.sleep(500)
     }
   }
 }

@@ -1,11 +1,11 @@
-package kafakaTest
+package kafakaTest.comsumer
+
+import com.google.common.eventbus.Subscribe
 import org.apache.kafka.common.serialization.StringDeserializer
-import org.apache.spark.{HashPartitioner, SparkConf}
-import org.apache.spark.storage.StorageLevel
-import org.apache.spark.streaming.kafka010.ConsumerStrategies.Subscribe
-import org.apache.spark.streaming.kafka010.LocationStrategies.PreferConsistent
-import org.apache.spark.streaming.kafka010._
+import org.apache.spark.SparkConf
+import org.apache.spark.streaming.kafka010.KafkaUtils
 import org.apache.spark.streaming.{Seconds, StreamingContext}
+
 object WordCount {
 
   val updateFunc = (iterator: Iterator[(String, Seq[Int], Option[Int])]) => {
@@ -39,11 +39,11 @@ object WordCount {
       "enable.auto.commit" -> (false: java.lang.Boolean)
     )
     val topics = Array("test")
-    val stream = KafkaUtils.createDirectStream[String, String](
-      ssc,
-      PreferConsistent,
-      Subscribe[String, String](topics, kafkaParams)
-    ).map(_.key())
+//    val stream = KafkaUtils.createDirectStream[String, String](
+//      ssc,
+////      PreferConsistent,
+////      Subscribe[String, String](topics, kafkaParams)
+//    ).map(_.key())
 //    val wc = stream.flatMap(el=>el)
 //    val result = wc.updateStateByKey(updateFunc, new HashPartitioner(ssc.sparkContext.defaultParallelism), true)
 //    val wc = lines.flatMap(_.split(" ")).map((_, 1))
