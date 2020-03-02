@@ -12,18 +12,21 @@ import java.util.stream.IntStream;
 public class MyBeanPostprocessor implements BeanPostProcessor {
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("postProcessorBeforeInitialization.print bean name ........" + beanName + "=>" + bean);
+
         return bean;
     }
 
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("postprocessotAfterInitialization..print bean name..........." + beanName + "=>" + bean);
+        dosomthing();
         return bean;
     }
 
     public void dosomthing() {
-        IntStream.range(0, 10).mapToObj(i -> new Thread(() -> System.out.println("mmm"), String.valueOf(i)));
-
+        IntStream.range(0, 10).mapToObj(i -> new Thread(() -> System.out.println("mmm"), String.valueOf(i))).forEach(t->{
+            System.out.println("thread name:  "+t.getName());
+            t.start();
+        });
     }
-
 
 }

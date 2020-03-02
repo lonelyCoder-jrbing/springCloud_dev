@@ -1,4 +1,4 @@
-package kafakaTest.comsumer
+package streamingTest.comsumer
 
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.spark.SparkConf

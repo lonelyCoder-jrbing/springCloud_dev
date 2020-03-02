@@ -1,4 +1,4 @@
-package kafakaTest.producer
+package streamingTest.producer
 
 import java.util
 

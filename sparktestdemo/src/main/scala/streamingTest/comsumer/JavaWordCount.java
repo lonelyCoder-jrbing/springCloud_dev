@@ -1,13 +1,9 @@
-package kafakaTest.comsumer;
+package streamingTest.comsumer;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.streaming.Durations;
-import org.apache.spark.streaming.api.java.JavaDStream;
-import org.apache.spark.streaming.api.java.JavaPairDStream;
 import org.apache.spark.streaming.api.java.JavaReceiverInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
-
-import java.util.Arrays;
 
 public class JavaWordCount {
     public static void main(String[] args) {

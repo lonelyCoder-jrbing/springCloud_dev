@@ -1,4 +1,4 @@
-package kafakaTest.comsumer
+package streamingTest.comsumer
 
 import com.google.common.eventbus.Subscribe
 import org.apache.kafka.common.serialization.StringDeserializer

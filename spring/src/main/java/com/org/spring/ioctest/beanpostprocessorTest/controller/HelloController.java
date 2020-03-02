@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -17,8 +18,10 @@ public class HelloController {
     private static final Map<String, Integer> wordcountMap = new ConcurrentHashMap<>();
 
     @GetMapping("/add/{a}/{b}")
-    public String add(@PathVariable("a") int a, @PathVariable("b") int b) {
-        return "add result : " + calculateService.add(a, b) + ", from [" + calculateService.getServiceDesc() + "]";
+    public String add(@PathVariable("a") int a, @PathVariable("b") int b, HttpServletRequest request) {
+        Long startTime = (Long)request.getAttribute("startTime");
+
+        return "add result : " + calculateService.add(a, b) + ", from [" + calculateService.getServiceDesc() +" startTime:"+String.valueOf(startTime) +" ]";
     }
 
     @Bean

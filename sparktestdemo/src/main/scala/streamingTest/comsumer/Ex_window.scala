@@ -1,4 +1,4 @@
-package kafakaTest.comsumer
+package streamingTest.comsumer
 
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.kafka.common.serialization.StringDeserializer
@@ -27,7 +27,7 @@ object Ex_window {
       "enable.auto.commit" -> (true: java.lang.Boolean)
     )
 
-    val topics = Array("jurongbing01")
+    val topics = Array("logAnalyser")
 
     val kafkaStream: InputDStream[ConsumerRecord[String, String]] = KafkaUtils.createDirectStream[String, String](
       scc,
@@ -40,11 +40,11 @@ object Ex_window {
 
 
     //采集周期为5秒，窗口为15秒（包含三个采集批次），滑动步长为5秒，即每个批次滑动一次。
-    val words: DStream[String] = kafkaStream.flatMap(t=>t.value().split(" ")).window(Seconds(30),Seconds(10))
+    val words: DStream[String] = kafkaStream.flatMap(t => t.value().split(" ")).window(Seconds(30), Seconds(10))
 
 
     //    val words: DStream[String] = socketStream.flatMap(_.split(" "))
-
+    words.foreachRDD(_.foreachPartition(_.foreach(records=>println(records))))
     val pairs = words.map(word => (word, 1))
 
     val wordCounts: DStream[(String, Int)] = pairs.reduceByKey(_ + _)
