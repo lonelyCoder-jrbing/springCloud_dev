@@ -11,9 +11,10 @@ import org.springframework.stereotype.Service;
 @Configuration
 public class ESconfigProvider {
 
-    @Bean(destroyMethod = "close")
+//    @Bean(destroyMethod = "close")
+    @Bean
     public RestHighLevelClient restHighLevelClient() {
-        return new RestHighLevelClient(RestClient.builder(new HttpHost("192.168.1.102", 9200, "http")));
+        return new RestHighLevelClient(RestClient.builder(new HttpHost("localhost", 9200, "http")));
     }
 
 
