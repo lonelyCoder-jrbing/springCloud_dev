@@ -31,11 +31,12 @@ public class FlinkJavaStream {
                 }
             }
         }).keyBy("word")//以key分组统计
-                .timeWindow(Time.seconds(2), Time.seconds(2))//设置一个窗口函数，模拟数据流动
+                .timeWindow(Time.seconds(15), Time.seconds(2))//设置一个窗口函数，模拟数据流动
                 .sum("count");//计算时间窗口内的词语个数
 
         // 输出数据到目的端
         dataStream.print();
+        System.out.println("------------------------");
 
         // 执行任务操作
         env.execute("Flink Streaming Word Count By Java");
